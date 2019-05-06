@@ -1,0 +1,62 @@
+@import "../../styles/vars.less";
+
+.header {
+    height: 10rem;
+    margin: 0px auto;
+    max-width: 140rem;
+}
+
+.logoContainer {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.nav {
+
+    text-align: right;
+
+    a {
+        display: inline-block;
+        height: 10rem;
+        line-height: 10rem;
+        margin: 0 3rem;
+        text-decoration: none;
+        color: @COLOR_SECONDARY_DARK;
+        font-size: 1.8rem;
+    }
+
+    a:hover {
+        color: @COLOR_PRIMARY_LIGHT;
+        border-bottom: 5px solid @COLOR_PRIMARY_LIGHT;
+        height: calc(10rem - 5px);
+    }
+
+    a.signUp {
+        background: @COLOR_PRIMARY_LIGHT;
+        color: @COLOR_PRIMARY_WHITE;
+        height: 5rem;
+        line-height: 5rem;
+        border-radius: .4rem;
+        padding: 0 3rem;
+        margin: 0;
+    }
+
+    a.signUp:hover {
+        border: none;
+        height: 5rem;
+    }
+
+}
+
+@supports (display: grid) {
+
+    @media screen and (min-width: 64em) {
+
+        .header {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+        }
+
+    } 
+
+}
