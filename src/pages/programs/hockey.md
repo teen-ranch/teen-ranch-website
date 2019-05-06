@@ -12,5 +12,7 @@ categories:
   - category: Team Development
     description: Trusted by teams from rep to olympic levels.
     image: /img/hockey16.jpg
+staff:
+  - staffMember: Eddie Davey
 ---
 
