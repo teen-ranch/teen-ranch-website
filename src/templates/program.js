@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 // import { HTMLContent } from '../components/Content'
 import HeroBanner from '../components/HeroBanner';
 import './program.less'
+import { Img } from '@tueri/react'
 
 const Program = ({ data }) => {
   const { markdownRemark: post } = data
@@ -18,7 +19,15 @@ const Program = ({ data }) => {
         post.frontmatter.categories.map((category, i) => {
           return (
             <div className='programCategory' key={i}>
-              <img className='programCategory__image' src={ category.image } alt={ category.title } />
+
+              { 
+                process.env.NODE_ENV === 'production' ? (
+                  <Img className='programCategory__image' src={`https://cdn.tueri.io/68719476739/netlify/${ category.image.replace("/img", "" )} `} alt={ category.title } />
+                ) : (
+                  <img className='programCategory__image' src={ category.image } alt={ category.title } />
+                ) 
+              }
+              
 
               <div className='programCategory__overlay'>
                 <div className='programCategory__text'>

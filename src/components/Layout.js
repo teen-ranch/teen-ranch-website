@@ -3,11 +3,12 @@ import Helmet from 'react-helmet'
 import Nav from '../components/Nav'
 import '../styles/default.less'
 import useSiteMetadata from './SiteMetadata' 
+import TueriProvider from '@tueri/react'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <TueriProvider>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -45,7 +46,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Nav />
       <div>{children}</div>
-    </div>
+    </TueriProvider>
   )
 }
 
