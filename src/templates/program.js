@@ -10,8 +10,6 @@ import { Img } from '@tueri/react'
 
 const Program = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log(post)
-  console.log('https://cdn.tueri.io/68719476739/netlify/hockey9.jpg'.split('/'))
   return (
     <Layout>
 		<HeroBanner title={ post.frontmatter.title } subTitle={ post.frontmatter.subTitle } />
