@@ -22,3 +22,18 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Image, name: image, widget: image}
+  - name: "staff"
+    label: "Staff"
+    folder: "/src/collections/staff"
+    create: true
+    fields:
+      - {label: "Name", name: name, widget: string}
+      - {label: "Title", name: title, widget: string}
+      - {label: "Description", name: description, widget: text, required: false}
+      - {label: "Image", name: image, widget: image, required: false}
+      - label: Achievements
+        name: achievements
+        widget: list
+        required: false
+        fields:
+          - {label: Achievement, name: achievement, widget: string, required: false}
