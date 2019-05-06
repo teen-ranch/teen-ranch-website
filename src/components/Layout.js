@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
 import Nav from '../components/Nav'
 import '../styles/default.less'
 import useSiteMetadata from './SiteMetadata' 
@@ -46,7 +45,6 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Nav />
       <div>{children}</div>
-      <Footer />
     </div>
   )
 }

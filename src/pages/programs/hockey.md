@@ -2,6 +2,7 @@
 templateKey: program
 title: Hockey
 subTitle: Canada’s finest hockey school since 1971
+path: /hockey
 categories:
   - description: Level up your game at one of our week-long training camps.
     image: /img/hockey9.jpg
@@ -14,3 +15,4 @@ categories:
     title: Team Development
 ---
 
+test

@@ -1,0 +1,90 @@
+@import "../styles/vars.less";
+
+.programCategory__container {
+
+    max-width: 140rem;
+    margin: 5rem auto;
+
+    .programCategory {
+
+        height: 540px;
+        border-radius: 7px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+        transition: all 0.05s ease-in;
+
+        .programCategory__image {
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .programCategory__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: @COLOR_PRIMARY_GRADIENT_BOTTOM_TOP;
+            transition: all 0.05s ease-in;
+
+            .programCategory__text {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;                
+                padding: 2rem;
+                transition: all 0.05s ease-in;
+
+                .programCategory__title,
+                .programCategory__description {
+                    font-family: @FONT_FAMILY_SANS_SERIF;
+                    font-variant: normal;
+                }
+
+                .programCategory__title {
+                    font-size: 3rem;
+                    color: @COLOR_PRIMARY_WHITE;
+                }
+
+                .programCategory__description {
+                    color: @COLOR_SECONDARY_WHITE;
+                    height: 6rem;
+                }
+            }
+        }
+    
+    }
+
+    .programCategory:hover {
+        margin: -8px;
+        height: 556px;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.6);
+
+        .programCategory__overlay {
+            background: @COLOR_PRIMARY_GRADIENT_BOTTOM_TOP_HOVER;
+        }
+
+        .programCategory__text {
+            padding: 2.8rem;
+        }
+    }
+
+}
+
+@supports (display: grid) {
+
+    @media screen and (min-width: 64em) {
+
+        .programCategory__container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 4rem;
+        }
+
+    } 
+
+}

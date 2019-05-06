@@ -1,5 +1,6 @@
 ---
-templateKey: index-page
+templateKey: index
+path: /
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience

@@ -5,22 +5,32 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 // import { HTMLContent } from '../components/Content'
 import HeroBanner from '../components/HeroBanner';
+import './program.less'
 
 const Program = ({ data }) => {
   const { markdownRemark: post } = data
-  
+  console.log(post)
   return (
     <Layout>
 		<HeroBanner title={ post.frontmatter.title } subTitle={ post.frontmatter.subTitle } />
-		{
-			post.frontmatter.categories.map((category, i) => {
-				return (
-					<div className='programCategory' key={i}>
-						{ category.title }
-					</div>
-				)
-			})
-		}
+    <div className='programCategory__container'>
+      {
+        post.frontmatter.categories.map((category, i) => {
+          return (
+            <div className='programCategory' key={i}>
+              <img className='programCategory__image' src={ category.image } alt={ category.title } />
+
+              <div className='programCategory__overlay'>
+                <div className='programCategory__text'>
+                  <h2 className='programCategory__title'>{ category.title }</h2>
+                  <h3 className='programCategory__description'>{ category.description }</h3>
+                </div>
+              </div>              
+            </div>
+          )
+        })
+      }
+    </div>
     </Layout>
   )
 }
@@ -39,16 +49,14 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
-		subTitle
+		    subTitle
         description
-        tags
-		categories {
-			title
-			description
-			image
-		}
+		    categories {
+			    title
+			    description
+			    image
+		    }
       }
     }
   }

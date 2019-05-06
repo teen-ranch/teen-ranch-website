@@ -20,7 +20,7 @@ function Nav() {
 				aria-label="main-navigation"
 			>
 			
-				<Link to='/programs'>Programs</Link>
+				<Link to='/hockey'>Programs</Link>
 				<Link to='/schools'>Schools</Link>
 				<Link to='/retreats'>Retreats</Link>
 				<Link to='/events'>Events</Link>
