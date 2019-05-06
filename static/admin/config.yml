@@ -22,6 +22,12 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Image, name: image, widget: image}
+      - label: Staff
+        name: Staff
+        widget: list
+        fields:
+          - {label: "Staff Member", name: staffMember, widget: relation, collection: staff, searchFields: ['name'], valueField: 'name'}
+
   - name: "staff"
     label: "Staff"
     folder: "/src/collections/staff"
